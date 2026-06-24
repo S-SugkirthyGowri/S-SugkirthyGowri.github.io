@@ -1,12 +1,167 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Sugkirthy Gowri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sugkirthy Gowri | Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2.4rem;
+    }
+
+    .subtitle {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+    }
+
+    a.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    a.primary:hover {
+      background: var(--accent-dark);
+    }
+
+    a.secondary {
+      background: white;
+      color: var(--accent);
+    }
+
+    section {
+      margin-top: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 32px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 24px 0 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hi, I’m Sugkirthy Gowri</h1>
-  <p>MS student in AI in Biomedical Sciences.</p>
-  <p>I’m building my personal portfolio here.</p>
+  <main class="container">
+    <div class="hero">
+      <h1>Hi, I’m Sugkirthy Gowri</h1>
+      <p class="subtitle">MS student in AI applied to biomedical sciences | Biomedical engineering background | Aspiring data and operations professional</p>
+      <p>
+        Welcome to my personal portfolio. I’m building projects in data science, AI, biomedical research,
+        and practical problem-solving. This site will showcase my work, presentations, and project highlights.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="#projects">View Projects</a>
+        <a class="button secondary" href="mailto:your-email@example.com">Contact Me</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I’m a tech-savvy graduate student focused on AI applications in biomedical sciences. I enjoy turning
+        class projects and research ideas into clear, useful work that shows both technical skill and real-world thinking.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Project 1:</strong> Add a short summary here.</li>
+        <li><strong>Project 2:</strong> Add your PPT, code, or poster link here.</li>
+        <li><strong>Project 3:</strong> Add your data science or research project here.</li>
+      </ul>
+      <p class="small">More projects will be added soon.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Add your LinkedIn link</a><br>
+        Email: <a href="mailto:your-email@example.com">your-email@example.com</a>
+      </p>
+    </section>
+
+    <div class="footer">
+      © 2026 Sugkirthy Gowri
+    </div>
+  </main>
 </body>
 </html>
