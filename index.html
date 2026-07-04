@@ -6,13 +6,15 @@
   <title>Sugkirthy Gowri | Portfolio</title>
   <style>
     :root {
-      --bg: #f7f9fc;
-      --card: #ffffff;
-      --text: #1f2937;
+      --bg: #f5f7fb;
+      --card: rgba(255,255,255,0.88);
+      --text: #111827;
       --muted: #6b7280;
       --accent: #2563eb;
       --accent-dark: #1d4ed8;
-      --border: #e5e7eb;
+      --line: rgba(17,24,39,0.08);
+      --shadow: 0 20px 50px rgba(15,23,42,0.10);
+      --radius: 24px;
     }
 
     * {
@@ -22,34 +24,54 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(99,102,241,0.10), transparent 24%),
+        var(--bg);
+      line-height: 1.65;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 48px 20px;
+      padding: 56px 20px 40px;
     }
 
     .hero {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 40px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.80));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 44px;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.10);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1px solid rgba(37,99,235,0.12);
+      margin-bottom: 18px;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: 2.4rem;
+      margin: 0 0 14px;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
     }
 
     .subtitle {
-      margin: 0 0 20px;
+      margin: 0 0 22px;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
+      max-width: 760px;
     }
 
     .buttons {
@@ -60,12 +82,20 @@
     }
 
     a.button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 12px 18px;
-      border-radius: 10px;
+      border-radius: 14px;
       text-decoration: none;
       font-weight: 600;
-      border: 1px solid var(--accent);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    a.button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
     }
 
     a.primary {
@@ -80,19 +110,28 @@
     a.secondary {
       background: white;
       color: var(--accent);
+      border-color: var(--line);
     }
 
     section {
       margin-top: 24px;
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       padding: 28px 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
     h2 {
       margin-top: 0;
+      margin-bottom: 12px;
       font-size: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-top: 0;
     }
 
     ul {
@@ -107,6 +146,23 @@
     .small {
       color: var(--muted);
       font-size: 0.95rem;
+      margin-top: 14px;
+    }
+
+    .project-card {
+      border-left: 4px solid var(--accent);
+      padding-left: 18px;
+    }
+
+    .project-title {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .project-desc {
+      margin: 0;
+      color: var(--muted);
     }
 
     .footer {
@@ -115,11 +171,18 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
+
+    @media (max-width: 720px) {
+      .hero, section {
+        padding: 26px;
+      }
+    }
   </style>
 </head>
 <body>
   <main class="container">
     <div class="hero">
+      <div class="eyebrow">Portfolio • Data Science • Biomedical AI</div>
       <h1>Hi, I’m Sugkirthy Gowri</h1>
       <p class="subtitle">M.S. AI for Biomedical Sciences @ UT Dallas | B.S. Biomedical Engineering</p>
       <p>
@@ -129,29 +192,31 @@
 
       <div class="buttons">
         <a class="button primary" href="#projects">View Projects</a>
-        <a class="button secondary" href="mailto:your-email@example.com">Contact Me</a>
+        <a class="button secondary" href="mailto:sugkirthy.sridhar@gmail.com">Contact Me</a>
       </div>
     </div>
 
     <section>
       <h2>About Me</h2>
       <p>
-        I am a biomedical engineer and AI graduate student passionate about technologies at the intersection of healthcare, 
-        medical devices, pharmaceuticals, and data science. I am particularly drawn to working with clinical data to uncover 
-        insights that improve patient outcomes, as well as designing and building the medical devices and therapeutics that 
-        bring those insights to life. I am currently pursuing a M.S. in AI for Biomedical Sciences at UT Dallas, and seeking 
-        opportunities to apply both machine learning and engineering skills to clinical and biological problems, 
+        I am a biomedical engineer and AI graduate student passionate about technologies at the intersection of healthcare,
+        medical devices, pharmaceuticals, and data science. I am particularly drawn to working with clinical data to uncover
+        insights that improve patient outcomes, as well as designing and building the medical devices and therapeutics that
+        bring those insights to life. I am currently pursuing an M.S. in AI for Biomedical Sciences at UT Dallas, and seeking
+        opportunities to apply both machine learning and engineering skills to clinical and biological problems,
         whether through data-driven research or hands-on device development.
       </p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul>
-        <li><strong>Statistical Analysis of TCGA Cancer Genomics Data:</strong> This project explores the different variables that affect
-          outcomes for breast cancer patients taken from the TCGA Cancer Genomics Dataset. Purpose: to identify which predictors are most significant for predicting
-          survival in women with breast cancer.</li>
-      </ul>
+      <div class="project-card">
+        <p class="project-title">Statistical Analysis of TCGA Cancer Genomics Data</p>
+        <p class="project-desc">
+          This project explores the different variables that affect outcomes for breast cancer patients taken from the TCGA Cancer Genomics Dataset.
+          Purpose: to identify which predictors are most significant for predicting survival in women with breast cancer.
+        </p>
+      </div>
       <p class="small">More projects will be added soon.</p>
     </section>
 
@@ -159,7 +224,7 @@
       <h2>Contact</h2>
       <p>
         LinkedIn: <a href="https://www.linkedin.com/in/sugkirthy-gowri-sridhar/" target="_blank" rel="noreferrer">LinkedIn.com/Sugkirthy-Gowri-Sridhar</a><br>
-        Email: <a href="sugkirthy.sridhar@gmail.com">sugkirthy.sridhar@gmail.com</a>
+        Email: <a href="mailto:sugkirthy.sridhar@gmail.com">sugkirthy.sridhar@gmail.com</a>
       </p>
     </section>
 
